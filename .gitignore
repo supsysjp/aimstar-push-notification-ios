@@ -81,3 +81,5 @@ xcuserdata/
 
 ## built dSYM files
 /Example/*.dSYM.zip
+
+.ruby-version
