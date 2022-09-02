@@ -9,8 +9,6 @@ import UIKit
 import AimstarMessagingSDK
 import FirebaseMessaging
 
-let AIMSTAR_ID = "AimstarMessagingTestIos"
-
 class ViewController: UIViewController {
     @IBOutlet var fcmTokenMessage: UILabel!
     @IBOutlet var remoteFCMTokenMessage: UILabel!
@@ -108,6 +106,8 @@ class ViewController: UIViewController {
     
     @objc func registerAimstarId () {
         print("register aimstar Id")
+        // IDとして使いたい任意の値を入れる
+        let AIMSTAR_ID = "YOUR_AIMSTAR_ID"
         AimstarMessaging.shared.registerAimstarId(aimstarId: AIMSTAR_ID)
     }
     
