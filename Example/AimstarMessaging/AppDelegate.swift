@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseMessaging
-import AimstarMessaging
+import AimstarMessagingSDK
 
 let API_KEY = "YOUR_API_KEY"
 

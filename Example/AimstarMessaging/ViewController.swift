@@ -6,7 +6,7 @@
 //  Copyright (c) 2022 Jesse Katsumata. All rights reserved.
 //
 import UIKit
-import AimstarMessaging
+import AimstarMessagingSDK
 import FirebaseMessaging
 
 let AIMSTAR_ID = "AimstarMessagingTestIos"
