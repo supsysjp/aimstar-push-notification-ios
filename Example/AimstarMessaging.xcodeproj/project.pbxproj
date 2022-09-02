@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51D171A671AF0619CFA780F5 /* Pods_AimstarMessaging_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031B9762605216EBBDA8E195 /* Pods_AimstarMessaging_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		031B9762605216EBBDA8E195 /* Pods_AimstarMessaging_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AimstarMessaging_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		061AFCD0C1FE77CF125D618C /* Pods-AimstarMessaging_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AimstarMessaging_Example.release.xcconfig"; path = "Target Support Files/Pods-AimstarMessaging_Example/Pods-AimstarMessaging_Example.release.xcconfig"; sourceTree = "<group>"; };
 		177DC51943551C0E7A787B87 /* Pods-AimstarMessaging_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AimstarMessaging_Tests.release.xcconfig"; path = "Target Support Files/Pods-AimstarMessaging_Tests/Pods-AimstarMessaging_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		29F9114B624C3B607BC841C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DA0EBC28C19ACE0084BD59 /* AimstarMessagingSDK.xcframework in Frameworks */,
+				51D171A671AF0619CFA780F5 /* Pods_AimstarMessaging_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				C7DA0EBA28C19AC50084BD59 /* AimstarMessagingSDK.xcframework */,
+				031B9762605216EBBDA8E195 /* Pods_AimstarMessaging_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
