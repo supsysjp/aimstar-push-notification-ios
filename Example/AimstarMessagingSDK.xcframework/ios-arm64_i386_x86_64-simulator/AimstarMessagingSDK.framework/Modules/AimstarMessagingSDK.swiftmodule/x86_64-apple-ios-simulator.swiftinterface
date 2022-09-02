@@ -1,0 +1,20 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 effective-4.1.50 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name AimstarMessagingSDK
+@_exported import AimstarMessagingSDK
+import Foundation
+import Swift
+import _Concurrency
+@_hasMissingDesignatedInitializers public class AimstarMessaging {
+  public static let shared: AimstarMessagingSDK.AimstarMessaging
+  public func setup(apiKey: Swift.String)
+  public func setup(apiKey: Swift.String, apiHost: Swift.String)
+  public func registerAimstarId(aimstarId: Swift.String)
+  public func setDeviceId(deviceId: Swift.String)
+  public func setFcmId(fcmId: Swift.String)
+  public func logout()
+  public func sendLog(notificationId: Swift.String, targetGroupId: Swift.String)
+  public func sendLog(notification: UserNotifications.UNNotification)
+  public func postToken()
+  @objc deinit
+}
