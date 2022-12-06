@@ -49,7 +49,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		98F61BDB8A81E0FDF1BEF427 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C754095B28A115380094C34D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C7DA0EBA28C19AC50084BD59 /* AimstarMessagingSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AimstarMessagingSDK.xcframework; sourceTree = "<group>"; };
+		C7DA0EBA28C19AC50084BD59 /* AimstarMessagingSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AimstarMessagingSDK.xcframework; path = ../AimstarMessagingSDK.xcframework; sourceTree = "<group>"; };
 		C7EAA19828BCE8DE0071BAE2 /* AimstarMessaging_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AimstarMessaging_Example.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
