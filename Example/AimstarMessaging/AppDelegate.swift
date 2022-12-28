@@ -12,6 +12,7 @@ import FirebaseMessaging
 import AimstarMessagingSDK
 
 let API_KEY = "YOUR_API_KEY"
+let TENANT_ID = "YOUR_TENANT_ID"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         
         // AimstarMessaging Module を Initialize する
-        AimstarMessaging.shared.setup(apiKey: API_KEY)
+        AimstarMessaging.shared.setup(apiKey: API_KEY, tenantId: TENANT_ID)
         AimstarMessaging.shared.setDeviceId(deviceId: UUID().uuidString)
         
         let token = Messaging.messaging().fcmToken

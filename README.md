@@ -4,6 +4,21 @@
 iOS 13+
 Xcode 13.4.1+
 
+## インストール
+
+マニュアルまたはCocoaPodsでインストールできます。
+
+### マニュアル
+
+[releases](releases) から AimstarMessagingSDK.zip をダウンロードして展開し AimstarMessagingSDK.xcframework をプロジェクトに含めてください
+
+### CocoaPods
+
+```ruby
+pod "AimstarMessaging"
+```
+
+
 ## SDKで提供する機能について
 - aimstarのPush通知を受信するために必要な情報を登録する
 - Push通知から起動した場合のログ送信
