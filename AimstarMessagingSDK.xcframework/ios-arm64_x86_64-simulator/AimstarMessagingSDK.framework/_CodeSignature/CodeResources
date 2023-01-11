@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QcYV3p7h0U4sS+pzJjSKlapVyro=
+		kJ4EzaxVDghiQzqAdTxJi/ZbNIg=
 		</data>
 		<key>Modules/AimstarMessagingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/AimstarMessagingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		daSLvGbeNKA8Xp3kSSgluVq/kPc=
+		/UovpnE6GS7OnXNqRxBvpBVp1fw=
 		</data>
 		<key>Modules/AimstarMessagingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/AimstarMessagingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9juQFKHVeodtkJY0K7GUXLoCVec=
+		nzt9psTRdjNMC6RWLSNIxBNe2T4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CkPT+gwu5gF1IOQqkICANehkecD+NsHn8jnFzV/PAbM=
+			6IbY57EExFrW32BPg/pzUOsftkgN/bJj0LPRa7LCgLQ=
 			</data>
 		</dict>
 		<key>Modules/AimstarMessagingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			amITzUCrQ0Z/gqQgkplPT4tBC2KtqzMttgvq8xvPjAU=
+			vlyLVh1Y4iY9yeMGD8e0hetuJWpd9T25amfJzGxTNk8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
