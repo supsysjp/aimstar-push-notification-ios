@@ -1,8 +1,9 @@
 # AimstarMessaging SDK iOS
 
-## Requirements
-iOS 13+
-Xcode 13.4.1+
+## 動作環境
+
+* iOS 13以降が必要です
+* Xcode 13.4.1以降を開発環境としています
 
 ## インストール
 
@@ -20,31 +21,46 @@ pod "AimstarMessaging"
 
 
 ## SDKで提供する機能について
-- aimstarのPush通知を受信するために必要な情報を登録する
+- AimstarのPush通知を受信するために必要な情報を登録する
 - Push通知から起動した場合のログ送信
 
 # SDKのInterfaceについて
-## Aimstar class
-Aimstar のクラスです。
-シングルトンとして使うため、使用する際は `Aimstar.shared` からメソッドを呼び出します
-### setup(apiKey: String)  
+
+## 用語
+
+| 用語 | 説明 |
+|---|---|
+| API Key | AimstarMessagingを利用するために必要なAPIキーで、Aimstar側で事前にアプリ開発者に発行されます。 |
+| Tenant ID | AimstarMessagingを利用するために必要なテナントIDで、Aimstar側で事前にアプリ開発者に発行されます。 |
+| Customer ID | アプリ開発者がユーザーを識別するIDで、アプリ開発者が独自に発行、生成、または利用します。 |
+| 端末の識別ID | アプリを端末ごと(インストールごと)に識別するIDです。アプリ起動後の初回のセットアップ時にUUIDを永続化して使います。 |
+| FCMトークン | Firebaseがプッシュ通知を送信するために必要なIDで、Firebase側で発行・更新され、アプリ側で取得できます。 |
+
+## AimstarMessaging class
+使用する際は `Aimstar.shared` から下記メソッドを呼び出します
+
+### func setup(apiKey: String, tenantId: String)
 アプリ起動時に呼び出してください。
 
+
 ### registerAimstarId(aimstarId: String)
-Aimstar Id を登録する際に使用します。
+Customer ID をセットします。
 
 ### setDeviceId(deviceId: String)
 端末の識別IDをセットします
 
 ### setFcmId(fcmId: String)
-端末のFCM IDをセットします
+端末のFCMトークンをセットします
 
 ### logout()
-セットしている aimstarId を削除します
+セットしている Customer ID を削除します
 
 ### sendLog(notification: UNNotification)
-AimstarのPush通知から起動した際にPayloadに含まれるNotificationIdを使用して呼び出しします。
+AimstarのPush通知から起動した際にログを送信します
+
 # アプリ側で実装する必要がある機能
+
+
 ### AimstarMessaging の Initialize
 アプリが起動した際に AimstarMessaging に必要なパラメーターを記入します
 
@@ -52,19 +68,36 @@ Swift:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  AimstarMessaging.shared.setup(apiKey: API_KEY, apiHost: API_HOST)
-  AimstarMessaging.shared.setDeviceId(deviceId: UUID().uuidString)
+  AimstarMessaging.shared.setup(apiKey: API_KEY, tenantId: TENANT_ID)
+  AimstarMessaging.shared.setDeviceId(deviceId: uuid) // UUID().uuidStringを端末ごとに永続化したものをセットします
 
   ...
 }
 ```
 
-### FCM ID の設定
+### Customer IDの設定
 
-任意のタイミングで FCM ID をAimstarMessagingに設定します。
+ユーザーのCustomer IDをセットしてください。例えばアプリ起動時にログイン済みの場合やログイン完了時に呼び出してください。
 
 ```swift
+  ...
+  AimstarMessaging.shared.registerAimstarId(aimstarId: CUSTOMER_ID)
+  ...
+```
 
+ログアウトしたときなど、有効なCustomer IDが無くなった場合に呼び出してください。
+
+```swift
+  ...
+  AimstarMessaging.shared.logout()
+  ...
+```
+
+### FCMトークンの設定
+
+FirebaseからFCMトークンを取得できたタイミングでAimstarMessagingにセットします。FCMトークンが更新された場合も再度セットしてください。
+
+```swift
 import FirebaseMessaging
 
   ...
@@ -82,14 +115,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                               willPresent notification: UNNotification,
                               withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                 -> Void) {
-    AimstarMessaging.shared.sendLog(notification:notification)
+    AimstarMessaging.shared.sendLog(notification: notification)
     completionHandler([[.alert, .sound]])
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
                               withCompletionHandler completionHandler: @escaping () -> Void) {
-    AimstarMessaging.shared.sendLog(notification:response.notification)
+    AimstarMessaging.shared.sendLog(notification: response.notification)
     completionHandler()
   }
 }
