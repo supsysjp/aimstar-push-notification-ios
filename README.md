@@ -24,6 +24,8 @@ pod "AimstarMessaging"
 - AimstarのPush通知を受信するために必要な情報を登録する
 - Push通知から起動した場合のログ送信
 
+※ Firebase自体は既に該当するアプリに組み込まれている想定です。
+
 # SDKのInterfaceについて
 
 ## 用語
@@ -45,18 +47,22 @@ pod "AimstarMessaging"
 
 ### registerAimstarId(aimstarId: String)
 Customer ID をセットします。
+このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
 
 ### setDeviceId(deviceId: String)
 端末の識別IDをセットします
 
 ### setFcmId(fcmId: String)
 端末のFCMトークンをセットします
+このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
 
 ### logout()
 セットしている Customer ID を削除します
+これにより、push通知の配信対象外になります
 
 ### sendLog(notification: UNNotification)
 AimstarのPush通知から起動した際にログを送信します
+ログをaimstarに集積することで、Push通知の効果検証を行うことができます
 
 # アプリ側で実装する必要がある機能
 
