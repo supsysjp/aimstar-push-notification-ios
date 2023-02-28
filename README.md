@@ -57,8 +57,8 @@ Aimstar ID をセットします。
 このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
 
 ### logout()
-セットしている Aimstar ID を削除します
-これにより、push通知の配信対象外になります
+ログアウトしたときや、匿名ユーザーによる使用など、アプリにおいてAimstarIdを特定できない状態となった場合に呼び出してください。
+この処理を呼び出すことでPush通知の配信対象外になります。
 
 ### sendLog(notification: UNNotification)
 AimstarのPush通知から起動した際にログを送信します
