@@ -19,19 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
         Messaging.messaging().delegate = self
         
         // AimstarMessaging Module を Initialize する
         AimstarMessaging.shared.setup(apiKey: API_KEY, tenantId: TENANT_ID)
-        AimstarMessaging.shared.setDeviceId(deviceId: UUID().uuidString)
         
-        let token = Messaging.messaging().fcmToken
-        
-        if (token != nil) {
-            AimstarMessaging.shared.setFcmId(fcmId: token!)
+        if let token = Messaging.messaging().fcmToken {
+            AimstarMessaging.shared.setFcmId(fcmId: token)
         }
         
 

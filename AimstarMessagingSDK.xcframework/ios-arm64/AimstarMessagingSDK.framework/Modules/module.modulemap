@@ -6,6 +6,6 @@ framework module AimstarMessagingSDK {
 }
 
 module AimstarMessagingSDK.Swift {
-    header "AimstarMessagingSDK-Swift.h"
-    requires objc
+  header "AimstarMessagingSDK-Swift.h"
+  requires objc
 }

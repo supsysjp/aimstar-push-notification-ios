@@ -1,7 +1,28 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 target 'AimstarMessaging_Example' do
   pod 'FirebaseMessaging'
 end
+
+def lift_to_xcode_recommended_settings(pi)
+  pi.pods_project.targets.each do |t|
+    t.build_configurations.each do |c|
+      # suppress warnings like this: deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 9.0, but the range of supported deployment target versions is 11.0
+      c.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      # suppress recommended settings warnings: automatically select archs
+      c.build_settings.delete 'ARCHS'
+    end
+  end
+
+  pi.pods_project.build_configurations.each do |c|
+    # suppress recommended settings warnings: dead code stripping
+    c.build_settings['DEAD_CODE_STRIPPING'] = 'YES'
+  end
+end
+
+post_install do |pi|
+  lift_to_xcode_recommended_settings pi
+end
+

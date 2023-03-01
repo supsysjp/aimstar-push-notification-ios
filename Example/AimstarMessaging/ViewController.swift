@@ -68,8 +68,8 @@ class ViewController: UIViewController {
         let label = createHeader("Aimstar Messaging Example")
         view.addSubview(label)
         
-        let registerButton = createButton("Register AimstarId")
-        registerButton.addTarget(self, action: #selector(registerAimstarId), for: .touchUpInside)
+        let registerButton = createButton("Register CustomerId")
+        registerButton.addTarget(self, action: #selector(registerCustomerId), for: .touchUpInside)
         view.addSubview(registerButton)
         
         let logoutButton = createButton("Logout")
@@ -82,6 +82,7 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registerButton.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 24),
             logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
             copyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             copyButton.topAnchor.constraint(equalTo: logoutButton.bottomAnchor, constant: 24),
             // Log Messages
-            fcmTokenLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            fcmTokenLabel.topAnchor.constraint(equalTo: copyButton.bottomAnchor, constant: 24),
             self.fcmTokenMessage.topAnchor.constraint(equalTo: fcmTokenLabel.bottomAnchor)
         ])
     }
@@ -104,11 +105,11 @@ class ViewController: UIViewController {
         AimstarMessaging.shared.logout()
     }
     
-    @objc func registerAimstarId () {
+    @objc func registerCustomerId () {
         print("register aimstar Id")
         // IDとして使いたい任意の値を入れる
-        let AIMSTAR_ID = "YOUR_AIMSTAR_ID"
-        AimstarMessaging.shared.registerAimstarId(aimstarId: AIMSTAR_ID)
+        let CUSTOMER_ID = "CUSTOMER_ID"
+        AimstarMessaging.shared.registerCustomerId(customerId: CUSTOMER_ID)
     }
     
     @objc func displayFCMToken(notification: NSNotification) {

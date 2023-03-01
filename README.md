@@ -3,7 +3,7 @@
 ## 動作環境
 
 * iOS 13以降が必要です
-* Xcode 13.4.1以降を開発環境としています
+* Xcode 14.2以降を開発環境としています
 
 ## インストール
 
@@ -34,8 +34,7 @@ pod "AimstarMessaging"
 |---|---|
 | API Key | AimstarMessagingを利用するために必要なAPIキーで、Aimstar側で事前にアプリ開発者に発行されます。 |
 | Tenant ID | AimstarMessagingを利用するために必要なテナントIDで、Aimstar側で事前にアプリ開発者に発行されます。 |
-| Aimstar ID | アプリ開発者がユーザーを識別するIDで、アプリ開発者が独自に発行、生成、または利用します。 |
-| 端末の識別ID | アプリを端末ごと(インストールごと)に識別するIDです。アプリ起動後の初回のセットアップ時にUUIDを永続化して使います。 |
+| Customer ID | アプリ開発者がユーザーを識別するIDで、アプリ開発者が独自に発行、生成、または利用します。 |
 | FCMトークン | Firebaseがプッシュ通知を送信するために必要なIDで、Firebase側で発行・更新され、アプリ側で取得できます。 |
 
 ## AimstarMessaging class
@@ -45,20 +44,17 @@ pod "AimstarMessaging"
 アプリ起動時に呼び出してください。
 
 
-### registerAimstarId(aimstarId: String)
-Aimstar ID をセットします。
+### registerCustomerId(customerId: String)
+Customer ID をセットします。
 このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
-
-### setDeviceId(deviceId: String)
-端末の識別IDをセットします
 
 ### setFcmId(fcmId: String)
 端末のFCMトークンをセットします
 このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
 
 ### logout()
-ログアウトしたときや、匿名ユーザーによる使用など、アプリにおいてAimstarIdを特定できない状態となった場合に呼び出してください。
-この処理を呼び出すことでPush通知の配信対象外になります。
+セットしている Customer ID を削除します
+これにより、push通知の配信対象外になります
 
 ### sendLog(notification: UNNotification)
 AimstarのPush通知から起動した際にログを送信します
@@ -75,23 +71,21 @@ Swift:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   AimstarMessaging.shared.setup(apiKey: API_KEY, tenantId: TENANT_ID)
-  AimstarMessaging.shared.setDeviceId(deviceId: uuid) // UUID().uuidStringを端末ごとに永続化したものをセットします
-
   ...
 }
 ```
 
-### Aimstar IDの設定
+### Customer IDの設定
 
-ユーザーのAimstar IDをセットしてください。例えばアプリ起動時にログイン済みの場合やログイン完了時に呼び出してください。
+ユーザーのCustomer IDをセットしてください。例えばアプリ起動時にログイン済みの場合やログイン完了時に呼び出してください。
 
 ```swift
   ...
-  AimstarMessaging.shared.registerAimstarId(aimstarId: AIMSTAR_ID)
+  AimstarMessaging.shared.registerCustomerId(customerId: CUSTOMER_ID)
   ...
 ```
 
-ログアウトしたときなど、有効なAimstar IDが無くなった場合に呼び出してください。
+ログアウトしたときなど、有効なCustomer IDが無くなった場合に呼び出してください。
 
 ```swift
   ...

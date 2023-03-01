@@ -1,0 +1,447 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AimstarMessagingSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AimstarMessaging",
+        "printedName": "AimstarMessaging",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AimstarMessaging",
+                "printedName": "AimstarMessagingSDK.AimstarMessaging",
+                "usr": "s:19AimstarMessagingSDK0aB0C"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AimstarMessagingSDK0aB0C6sharedACvpZ",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C6sharedACvpZ",
+            "moduleName": "AimstarMessagingSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AimstarMessaging",
+                    "printedName": "AimstarMessagingSDK.AimstarMessaging",
+                    "usr": "s:19AimstarMessagingSDK0aB0C"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AimstarMessagingSDK0aB0C6sharedACvgZ",
+                "mangledName": "$s19AimstarMessagingSDK0aB0C6sharedACvgZ",
+                "moduleName": "AimstarMessagingSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "setup",
+            "printedName": "setup(apiKey:tenantId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C5setup6apiKey8tenantIdySS_SStF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C5setup6apiKey8tenantIdySS_SStF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setup",
+            "printedName": "setup(apiKey:tenantId:apiHost:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C5setup6apiKey8tenantId0E4HostySS_S2StF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C5setup6apiKey8tenantId0E4HostySS_S2StF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "registerCustomerId",
+            "printedName": "registerCustomerId(customerId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C18registerCustomerId08customerF0ySS_tF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C18registerCustomerId08customerF0ySS_tF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setFcmId",
+            "printedName": "setFcmId(fcmId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C8setFcmId03fcmF0ySS_tF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C8setFcmId03fcmF0ySS_tF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logout",
+            "printedName": "logout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C6logoutyyF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C6logoutyyF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendLog",
+            "printedName": "sendLog(notificationId:targetGroupId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C7sendLog14notificationId011targetGroupG0ySS_SStF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C7sendLog14notificationId011targetGroupG0ySS_SStF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendLog",
+            "printedName": "sendLog(notification:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotification",
+                "printedName": "UserNotifications.UNNotification",
+                "usr": "c:objc(cs)UNNotification"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C7sendLog12notificationySo14UNNotificationC_tF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C7sendLog12notificationySo14UNNotificationC_tF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "postToken",
+            "printedName": "postToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C9postTokenyyF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C9postTokenyyF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19AimstarMessagingSDK0aB0C",
+        "mangledName": "$s19AimstarMessagingSDK0aB0C",
+        "moduleName": "AimstarMessagingSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AimstarMessagingSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AimstarMessagingSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AimstarMessagingSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AimstarMessagingSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AimstarMessagingSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UserDefaults",
+        "printedName": "UserDefaults",
+        "declKind": "Class",
+        "usr": "c:objc(cs)NSUserDefaults",
+        "moduleName": "Foundation",
+        "isOpen": true,
+        "objc_name": "NSUserDefaults",
+        "declAttributes": [
+          "ObjC",
+          "NonSendable",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
+      "kind": "StringLiteral",
+      "offset": 42,
+      "length": 41,
+      "value": "\"https:\/\/event-prod.aimstar.jp\/ignite\/v1\""
+    },
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 77,
+      "length": 13,
+      "value": "\"\/fcm_tokens\""
+    },
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 119,
+      "length": 6,
+      "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "kind": "StringLiteral",
+      "offset": 75,
+      "length": 7,
+      "value": "\"\/logs\""
+    },
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "kind": "StringLiteral",
+      "offset": 111,
+      "length": 6,
+      "value": "\"POST\""
+    }
+  ]
+}
