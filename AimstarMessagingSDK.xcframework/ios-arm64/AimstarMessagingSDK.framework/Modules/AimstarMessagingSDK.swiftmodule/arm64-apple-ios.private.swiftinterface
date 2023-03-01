@@ -11,8 +11,7 @@ import _StringProcessing
   public static let shared: AimstarMessagingSDK.AimstarMessaging
   public func setup(apiKey: Swift.String, tenantId: Swift.String)
   public func setup(apiKey: Swift.String, tenantId: Swift.String, apiHost: Swift.String)
-  public func registerCustomerId(customerId: Swift.String)
-  public func setFcmId(fcmId: Swift.String)
+  public func registerToken(customerId: Swift.String, fcmToken: Swift.String)
   public func logout()
   public func sendLog(notificationId: Swift.String, targetGroupId: Swift.String)
   public func sendLog(notification: UserNotifications.UNNotification)
@@ -24,4 +23,8 @@ extension AimstarMessagingSDK.AimstarMessaging {
   public func registerAimstarId(aimstarId: Swift.String)
   @available(*, unavailable, message: "setDeviceId is no longer needed. App can remove the func call.")
   public func setDeviceId(deviceId: Swift.String)
+  @available(*, unavailable, renamed: "registerToken(customerId:fcmToken:)")
+  public func registerCustomerId(customerId: Swift.String)
+  @available(*, unavailable, renamed: "registerToken(customerId:fcmToken:)")
+  public func setFcmId(fcmId: Swift.String)
 }

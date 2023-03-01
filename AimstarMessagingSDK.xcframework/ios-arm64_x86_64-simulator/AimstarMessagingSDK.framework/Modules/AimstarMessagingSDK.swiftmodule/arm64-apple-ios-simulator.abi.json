@@ -139,8 +139,8 @@
           },
           {
             "kind": "Function",
-            "name": "registerCustomerId",
-            "printedName": "registerCustomerId(customerId:)",
+            "name": "registerToken",
+            "printedName": "registerToken(customerId:fcmToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -152,26 +152,6 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C18registerCustomerId08customerF0ySS_tF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C18registerCustomerId08customerF0ySS_tF",
-            "moduleName": "AimstarMessagingSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setFcmId",
-            "printedName": "setFcmId(fcmId:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
               },
               {
                 "kind": "TypeNominal",
@@ -181,8 +161,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C8setFcmId03fcmF0ySS_tF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C8setFcmId03fcmF0ySS_tF",
+            "usr": "s:19AimstarMessagingSDK0aB0C13registerToken10customerId03fcmE0ySS_SStF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C13registerToken10customerId03fcmE0ySS_SStF",
             "moduleName": "AimstarMessagingSDK",
             "declAttributes": [
               "AccessControl"
@@ -428,6 +408,20 @@
       "offset": 119,
       "length": 6,
       "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 269,
+      "length": 13,
+      "value": "\"\/fcm_tokens\""
+    },
+    {
+      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 311,
+      "length": 8,
+      "value": "\"DELETE\""
     },
     {
       "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",

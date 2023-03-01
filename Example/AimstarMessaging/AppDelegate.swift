@@ -16,8 +16,13 @@ let TENANT_ID = "YOUR_TENANT_ID"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static var shared: AppDelegate { UIApplication.shared.delegate as! AppDelegate }
 
     var window: UIWindow?
+
+    /// Customer ID: アプリ開発者がユーザーを識別するIDで、アプリ開発者が独自に発行、生成、または利用します。
+    var customerId: String? = "CUSTOMER_ID"
+    var fcmToken: String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -26,9 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // AimstarMessaging Module を Initialize する
         AimstarMessaging.shared.setup(apiKey: API_KEY, tenantId: TENANT_ID)
-        
-        if let token = Messaging.messaging().fcmToken {
-            AimstarMessaging.shared.setFcmId(fcmId: token)
+
+        fcmToken = Messaging.messaging().fcmToken
+        if let customerId, let fcmToken {
+            AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
         }
         
 

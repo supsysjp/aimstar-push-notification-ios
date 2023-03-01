@@ -106,10 +106,10 @@ class ViewController: UIViewController {
     }
     
     @objc func registerCustomerId () {
-        print("register aimstar Id")
-        // IDとして使いたい任意の値を入れる
-        let CUSTOMER_ID = "CUSTOMER_ID"
-        AimstarMessaging.shared.registerCustomerId(customerId: CUSTOMER_ID)
+        print("register customer Id")
+        if let customerId = AppDelegate.shared.customerId, let fcmToken = AppDelegate.shared.fcmToken {
+            AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
+        }
     }
     
     @objc func displayFCMToken(notification: NSNotification) {
@@ -117,6 +117,7 @@ class ViewController: UIViewController {
         
       if let fcmToken = userInfo["token"] as? String {
         print("Received FCM token: \(fcmToken)")
+        AppDelegate.shared.fcmToken = fcmToken
         fcmTokenMessage.text = "\(fcmToken)"
       }
     }
