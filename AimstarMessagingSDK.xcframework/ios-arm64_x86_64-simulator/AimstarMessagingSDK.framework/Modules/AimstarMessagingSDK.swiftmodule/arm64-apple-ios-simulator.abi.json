@@ -17,6 +17,271 @@
         "printedName": "AimstarMessaging",
         "children": [
           {
+            "kind": "TypeDecl",
+            "name": "Error",
+            "printedName": "Error",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "precondition",
+                "printedName": "precondition",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AimstarMessagingSDK.AimstarMessaging.Error.Type) -> (Swift.String) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AimstarMessagingSDK.AimstarMessaging.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO12preconditionyAESScAEmF",
+                "mangledName": "$s19AimstarMessagingSDK0aB0C5ErrorO12preconditionyAESScAEmF",
+                "moduleName": "AimstarMessagingSDK",
+                "declAttributes": [
+                  "RawDocComment"
+                ],
+                "fixedbinaryorder": 0
+              },
+              {
+                "kind": "Var",
+                "name": "clientError",
+                "printedName": "clientError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AimstarMessagingSDK.AimstarMessaging.Error.Type) -> (Swift.Int?) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Int?) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AimstarMessagingSDK.AimstarMessaging.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO06clientD0yAESiSgcAEmF",
+                "mangledName": "$s19AimstarMessagingSDK0aB0C5ErrorO06clientD0yAESiSgcAEmF",
+                "moduleName": "AimstarMessagingSDK",
+                "declAttributes": [
+                  "RawDocComment"
+                ],
+                "fixedbinaryorder": 1
+              },
+              {
+                "kind": "Var",
+                "name": "serverError",
+                "printedName": "serverError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AimstarMessagingSDK.AimstarMessaging.Error.Type) -> (Swift.Int?) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Int?) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AimstarMessagingSDK.AimstarMessaging.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO06serverD0yAESiSgcAEmF",
+                "mangledName": "$s19AimstarMessagingSDK0aB0C5ErrorO06serverD0yAESiSgcAEmF",
+                "moduleName": "AimstarMessagingSDK",
+                "declAttributes": [
+                  "RawDocComment"
+                ],
+                "fixedbinaryorder": 2
+              },
+              {
+                "kind": "Var",
+                "name": "networkError",
+                "printedName": "networkError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AimstarMessagingSDK.AimstarMessaging.Error.Type) -> (Swift.Error) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Error) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AimstarMessagingSDK.AimstarMessaging.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "AimstarMessagingSDK.AimstarMessaging.Error",
+                            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO07networkD0yAEsAD_pcAEmF",
+                "mangledName": "$s19AimstarMessagingSDK0aB0C5ErrorO07networkD0yAEsAD_pcAEmF",
+                "moduleName": "AimstarMessagingSDK",
+                "declAttributes": [
+                  "RawDocComment"
+                ],
+                "fixedbinaryorder": 3
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:19AimstarMessagingSDK0aB0C5ErrorO",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C5ErrorO",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "Frozen",
+              "RawDocComment"
+            ],
+            "isEnumExhaustive": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Error",
+                "printedName": "Error",
+                "usr": "s:s5ErrorP",
+                "mangledName": "$ss5ErrorP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              }
+            ]
+          },
+          {
             "kind": "Var",
             "name": "shared",
             "printedName": "shared",
@@ -181,12 +446,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C6logoutyyF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C6logoutyyF",
+            "usr": "s:19AimstarMessagingSDK0aB0C6logoutyyYaKF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C6logoutyyYaKF",
             "moduleName": "AimstarMessagingSDK",
             "declAttributes": [
               "AccessControl"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {

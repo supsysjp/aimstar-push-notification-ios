@@ -102,7 +102,30 @@ class ViewController: UIViewController {
     
     @objc func logout () {
         print("logout")
-        AimstarMessaging.shared.logout()
+        Task {
+            // use do-catch & try await...
+            do {
+                try await AimstarMessaging.shared.logout()
+            } catch let error as AimstarMessaging.Error {
+                // (optional) error handling with retry
+                print("error at \(#function): \(String(describing: error))")
+                switch error {
+                case .serverError, .networkError:
+                    let alert = UIAlertController(title: "Error", message: String(describing: error), preferredStyle: .alert)
+                    alert.addAction(.init(title: "Cancel", style: .cancel))
+                    alert.addAction(.init(title: "Retry", style: .default) { _ in self.logout() })
+                    self.present(alert, animated: true)
+                case .clientError, .precondition:
+                    // ignore the error
+                    break
+                }
+            } catch {
+                // (optional) error handling
+                print("error at \(#function): \(String(describing: error))")
+            }
+            // ...or just ignore error case:
+            // try? await AimstarMessaging.shared.logout()
+         }
     }
     
     @objc func registerCustomerId () {

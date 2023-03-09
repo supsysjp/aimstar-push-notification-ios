@@ -8,11 +8,19 @@ import Swift
 import _Concurrency
 import _StringProcessing
 @_hasMissingDesignatedInitializers public class AimstarMessaging {
+  @frozen public enum Error : Swift.Error {
+    case precondition(Swift.String)
+    case clientError(Swift.Int?)
+    case serverError(Swift.Int?)
+    case networkError(Swift.Error)
+  }
   public static let shared: AimstarMessagingSDK.AimstarMessaging
   public func setup(apiKey: Swift.String, tenantId: Swift.String)
   public func setup(apiKey: Swift.String, tenantId: Swift.String, apiHost: Swift.String)
   public func registerToken(customerId: Swift.String, fcmToken: Swift.String)
-  public func logout()
+  #if compiler(>=5.3) && $AsyncAwait
+  public func logout() async throws
+  #endif
   public func sendLog(notificationId: Swift.String, targetGroupId: Swift.String)
   public func sendLog(notification: UserNotifications.UNNotification)
   public func postToken()
