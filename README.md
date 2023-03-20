@@ -2,12 +2,12 @@
 
 ## 動作環境
 
-* iOS 13以降が必要です
-* Xcode 14.2以降を開発環境としています
+- iOS 13 以降が必要です
+- Xcode 14.2 以降を開発環境としています
 
 ## インストール
 
-マニュアルまたはCocoaPodsでインストールできます。
+マニュアルまたは CocoaPods でインストールできます。
 
 ### マニュアル
 
@@ -19,51 +19,70 @@
 pod "AimstarMessaging"
 ```
 
+## SDK で提供する機能について
 
-## SDKで提供する機能について
-- AimstarのPush通知を受信するために必要な情報を登録する
-- Push通知から起動した場合のログ送信
+- Aimstar の Push 通知を受信するために必要な情報を登録する
+- Push 通知から起動した場合のログ送信
 
-※ Firebase自体は既に該当するアプリに組み込まれている想定です。
+※ Firebase 自体は既に該当するアプリに組み込まれている想定です。
 
-# SDKのInterfaceについて
+# SDK の Interface について
 
 ## 用語
 
-| 用語 | 説明 |
-|---|---|
-| API Key | AimstarMessagingを利用するために必要なAPIキーで、Aimstar側で事前にアプリ開発者に発行されます。 |
-| Tenant ID | AimstarMessagingを利用するために必要なテナントIDで、Aimstar側で事前にアプリ開発者に発行されます。 |
-| Customer ID | アプリ開発者がユーザーを識別するIDで、アプリ開発者が独自に発行、生成、または利用します。 |
-| FCMトークン | Firebaseがプッシュ通知を送信するために必要なIDで、Firebase側で発行・更新され、アプリ側で取得できます。 |
+| 用語         | 説明                                                                                                       |
+| ------------ | ---------------------------------------------------------------------------------------------------------- |
+| API Key      | AimstarMessaging を利用するために必要な API キーで、Aimstar 側で事前にアプリ開発者に発行されます。         |
+| Tenant ID    | AimstarMessaging を利用するために必要なテナント ID で、Aimstar 側で事前にアプリ開発者に発行されます。      |
+| Customer ID  | アプリ開発者がユーザーを識別する ID で、アプリ開発者が独自に発行、生成、または利用します。                 |
+| FCM トークン | Firebase がプッシュ通知を送信するために必要な ID で、Firebase 側で発行・更新され、アプリ側で取得できます。 |
 
 ## AimstarMessaging class
+
 使用する際は `Aimstar.shared` から下記メソッドを呼び出します
 
 ### func setup(apiKey: String, tenantId: String)
+
 アプリ起動時に呼び出してください。
 
+### registerToken(customerId: String, fcmToken: String)
 
-### registerCustomerId(customerId: String)
-Customer ID をセットします。
-このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
+アプリ起動時など、ログインが完了したタイミングで FcmToken を取得して呼び出してください。 ここで配信基盤のバックエンドに CustomerID、FcmToken が連携され、配信対象になります
 
-### setFcmId(fcmId: String)
-端末のFCMトークンをセットします
-このタイミングで、fcmTokenおよびaimstarId、deviceIdが揃っている場合は配信基盤へそれらの情報が連携されます
 
-### logout()
-セットしている Customer ID を削除します
-これにより、push通知の配信対象外になります
+### logout()  
+ログアウトしたときなど、CustomerIDがアプリ側で有効ではなくなった時に呼び出してください。
+
+この処理を呼び出すことでPush通知の配信対象外になります
+
+また、通信などの影響でログアウト処理が完了しなかった場合は、以下のようにしてエラーハンドリングすることが出来ます
+
+```swift
+  do {
+      try await AimstarMessaging.shared.logout()
+  } catch let error as AimstarMessaging.Error {
+      print("error at \(#function): \(String(describing: error))")
+      switch error {
+      case .serverError, .networkError:
+        // (optional) error handling with retry
+      case .clientError, .precondition:
+          // ignore the error
+          break
+      }
+  }
+```
+
+
 
 ### sendLog(notification: UNNotification)
-AimstarのPush通知から起動した際にログを送信します
-ログをaimstarに集積することで、Push通知の効果検証を行うことができます
+
+Aimstar の Push 通知から起動した際にログを送信します
+ログを aimstar に集積することで、Push 通知の効果検証を行うことができます
 
 # アプリ側で実装する必要がある機能
 
-
 ### AimstarMessaging の Initialize
+
 アプリが起動した際に AimstarMessaging に必要なパラメーターを記入します
 
 Swift:
@@ -75,17 +94,17 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-### Customer IDの設定
+### CustomerID / FcmToken の設定
 
-ユーザーのCustomer IDをセットしてください。例えばアプリ起動時にログイン済みの場合やログイン完了時に呼び出してください。
+ユーザーの CustomerID と FcmToken をセットしてください。例えばアプリ起動時にログイン済みの場合やログイン完了時に、FcmToken を取得して呼び出してください。
 
 ```swift
   ...
-  AimstarMessaging.shared.registerCustomerId(customerId: CUSTOMER_ID)
+  AimstarMessaging.shared.registerToken(fcmToken: FCM_TOKEN, customerId: CUSTOMER_ID)
   ...
 ```
 
-ログアウトしたときなど、有効なCustomer IDが無くなった場合に呼び出してください。
+ログアウトしたときなど、CustomerID がアプリ側で有効ではなくなった時に呼び出してください。
 
 ```swift
   ...
@@ -93,16 +112,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ...
 ```
 
-### FCMトークンの設定
+### FCM トークンの設定
 
-FirebaseからFCMトークンを取得できたタイミングでAimstarMessagingにセットします。FCMトークンが更新された場合も再度セットしてください。
+Firebase から FCM トークンを取得できたタイミングで AimstarMessaging にセットします。FCM トークンが更新された場合も再度セットしてください。
 
 ```swift
 import FirebaseMessaging
-
   ...
   let token = Messaging.messaging().fcmToken
-  AimstarMessaging.shared.setFcmId(fcmId: token)
+  AimstarMessaging.shared.registerToken(customerId: CUSTOMER_ID, fcmToken: FCM_TOKEN)
 ```
 
 ### ユーザーが通知を開いた際にログ送信
