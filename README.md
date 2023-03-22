@@ -72,6 +72,8 @@ pod "AimstarMessaging"
   }
 ```
 
+もしリクエストが失敗した際にリクエストをリトライしたい場合等に使用することができます
+
 
 
 ### sendLog(notification: UNNotification)
