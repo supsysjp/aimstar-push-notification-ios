@@ -97,33 +97,39 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-### CustomerID / FcmToken の設定
+### Customer ID / FCM トークン の設定
 
-ユーザーの CustomerID と FcmToken をセットしてください。例えばアプリ起動時にログイン済みの場合やログイン完了時に、FcmToken を取得して呼び出してください。
+ユーザーの Customer ID と FCM トークンをセットしてください。これら二つを合わせて `registerToken(customerId:fcmToken:)` に渡すとセットできます。
+
+例えばアプリ起動時にログイン済みの場合やログイン完了時に、FCM トークンを取得して呼び出してください。
 
 ```swift
   ...
-  AimstarMessaging.shared.registerToken(fcmToken: FCM_TOKEN, customerId: CUSTOMER_ID)
+  let fcmToken = Messaging.messaging().fcmToken
+  AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
   ...
 ```
 
-ログアウトしたときなど、CustomerID がアプリ側で有効ではなくなった時に呼び出してください。
+FCM トークンが更新された場合も再度セットしてください。
+
+```swift
+  ...
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+    ...
+    if let fcmToken {
+      AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
+    }
+    ...
+  }
+  ...
+```
+
+ログアウトしたときなど、Customer ID がアプリ側で有効ではなくなった時はlogoutを呼び出してください。
 
 ```swift
   ...
   AimstarMessaging.shared.logout()
   ...
-```
-
-### FCM トークンの設定
-
-Firebase から FCM トークンを取得できたタイミングで AimstarMessaging にセットします。FCM トークンが更新された場合も再度セットしてください。
-
-```swift
-import FirebaseMessaging
-  ...
-  let token = Messaging.messaging().fcmToken
-  AimstarMessaging.shared.registerToken(customerId: CUSTOMER_ID, fcmToken: FCM_TOKEN)
 ```
 
 ### ユーザーが通知を開いた際にログ送信
