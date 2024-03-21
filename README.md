@@ -3,7 +3,7 @@
 ## 動作環境
 
 - iOS 13 以降が必要です
-- Xcode 14.2 以降を開発環境としています
+- Xcode 15.2 以降を開発環境としています
 
 ## インストール
 
@@ -153,5 +153,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     completionHandler()
   }
 }
-
 ```
+
+### アプリアイコンへの通知バッジの付与
+
+アプリアイコンの右上へ丸い数字のバッジを付ける機能はAimstarMessaging SDKでは提供しておりません。アプリ側で実装する必要があります。このセクションでは参考情報を記載いたします。
+
+アプリで `applicationIconBadgeNumber` をセットすることでバッジの数字を設定します。0に設定すると消すことができます。アプリの起動時やお知らせ画面の表示などの任意の時点で、アプリの機能に合わせて実装してください。
+
+参考ドキュメント: <https://developer.apple.com/documentation/uikit/uiapplication/1622918-applicationiconbadgenumber>
+
+
+
+
