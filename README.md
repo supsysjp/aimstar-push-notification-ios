@@ -164,5 +164,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 参考ドキュメント: <https://developer.apple.com/documentation/uikit/uiapplication/1622918-applicationiconbadgenumber>
 
 
-
+### リリースに際して
+弊社のAIMSTAR プッシュ配信用SDKを貴社アプリケーションに実装していただいた際に、アプリをリリースする際にアプリストアの審査で「トラッキングが含まれる」といった旨のアラートが上がってしまう場合がございます。
+この際には、大変恐れ入りますが、アプリのプライバシーに関する回答で、トラッキング行っている旨を記載して更新いただき、リリースを進めていただきますようお願いいたします。
 
