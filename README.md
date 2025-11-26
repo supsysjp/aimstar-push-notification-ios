@@ -11,7 +11,7 @@
 
 ### マニュアル
 
-[releases](releases) から AimstarMessagingSDK.zip をダウンロードして展開し AimstarMessagingSDK.xcframework をプロジェクトに含めてください
+[Releases](https://github.com/supsysjp/aimstar-push-notification-ios/releases) から AimstarMessagingSDK.zip をダウンロードして展開し AimstarMessagingSDK.xcframework をプロジェクトに含めてください
 
 ### CocoaPods
 
@@ -49,8 +49,8 @@ pod "AimstarMessaging"
 
 アプリ起動時など、ログインが完了したタイミングで FcmToken を取得して呼び出してください。 ここで配信基盤のバックエンドに CustomerID、FcmToken が連携され、配信対象になります
 
-
 ### logout()  
+
 ログアウトしたときなど、CustomerIDがアプリ側で有効ではなくなった時に呼び出してください。
 
 この処理を呼び出すことでPush通知の配信対象外になります
@@ -74,8 +74,6 @@ pod "AimstarMessaging"
 
 logoutリクエストが失敗したままですと、想定していない通知が届いてしまう場合があります
 そういったケースを防ぐために、もしリクエストが失敗した際にリクエストをリトライしたい場合等に使用することができます
-
-
 
 ### sendLog(notification: UNNotification)
 
@@ -163,8 +161,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 参考ドキュメント: <https://developer.apple.com/documentation/uikit/uiapplication/1622918-applicationiconbadgenumber>
 
-
 ### リリースに際して
-弊社のAIMSTAR プッシュ配信用SDKを貴社アプリケーションに実装していただいた際に、アプリをリリースする際にアプリストアの審査で「トラッキングが含まれる」といった旨のアラートが上がってしまう場合がございます。
-この際には、大変恐れ入りますが、アプリのプライバシーに関する回答で、トラッキング行っている旨を記載して更新いただき、リリースを進めていただきますようお願いいたします。
 
+弊社のAIMSTAR プッシュ配信用SDKを貴社アプリケーションに実装していただいた際に、アプリをリリースする際にアプリストアの審査で「トラッキングが含まれる」といった旨のアラートが上がってしまう場合がございます。
+
+この際には、大変恐れ入りますが、アプリのプライバシーに関する回答で、トラッキング行っている旨を記載して更新いただき、リリースを進めていただきますようお願いいたします。
