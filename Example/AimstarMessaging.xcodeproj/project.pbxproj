@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		C754095C28A115380094C34D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C754095B28A115380094C34D /* GoogleService-Info.plist */; };
 		C7DA0EBC28C19ACE0084BD59 /* AimstarMessagingSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA0EBA28C19AC50084BD59 /* AimstarMessagingSDK.xcframework */; };
 		C7DA0EBD28C19ACE0084BD59 /* AimstarMessagingSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA0EBA28C19AC50084BD59 /* AimstarMessagingSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EA428F4C298FA02000320E12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA428F4B298FA02000320E12 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +47,6 @@
 		C754095B28A115380094C34D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7DA0EBA28C19AC50084BD59 /* AimstarMessagingSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AimstarMessagingSDK.xcframework; path = ../AimstarMessagingSDK.xcframework; sourceTree = "<group>"; };
 		C7EAA19828BCE8DE0071BAE2 /* AimstarMessaging_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AimstarMessaging_Example.entitlements; sourceTree = "<group>"; };
-		EA428F4B298FA02000320E12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				EA428F4B298FA02000320E12 /* Images.xcassets */,
 				C754095B28A115380094C34D /* GoogleService-Info.plist */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -148,6 +145,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				C0F68089B6EECBF9D9082785 /* [CP] Embed Pods Frameworks */,
 				C7DA0EB128BFAE940084BD59 /* Embed Frameworks */,
+				EA5A517F2BBC527E00D058D0 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -199,7 +197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				EA428F4C298FA02000320E12 /* Images.xcassets in Resources */,
 				C754095C28A115380094C34D /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 			);
@@ -260,6 +257,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AimstarMessaging_Example/Pods-AimstarMessaging_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA5A517F2BBC527E00D058D0 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -414,6 +431,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AimstarMessaging/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +458,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AimstarMessaging/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

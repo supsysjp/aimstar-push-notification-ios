@@ -1,0 +1,9 @@
+excluded:
+  - Pods
+identifier_name:
+  min_length: 1
+  allowed_symbols: ["_"]
+disabled_rules:
+  - line_length
+  - force_cast
+  

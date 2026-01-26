@@ -43,11 +43,11 @@ class ViewController: UIViewController {
 
         return button
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         // Notification の Observer を追加
         NotificationCenter.default.addObserver(
              self,
@@ -64,14 +64,14 @@ class ViewController: UIViewController {
 
         self.fcmTokenMessage = createLabel("")
         view.addSubview(self.fcmTokenMessage)
-                
+
         let label = createHeader("Aimstar Messaging Example")
         view.addSubview(label)
-        
+
         let registerButton = createButton("Register CustomerId")
         registerButton.addTarget(self, action: #selector(registerCustomerId), for: .touchUpInside)
         view.addSubview(registerButton)
-        
+
         let logoutButton = createButton("Logout")
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
         view.addSubview(logoutButton)
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         let copyButton = createButton("Copy FCM Token")
         copyButton.addTarget(self, action: #selector(copyFCMToken), for: .touchUpInside)
         view.addSubview(copyButton)
-        
+
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
@@ -95,12 +95,7 @@ class ViewController: UIViewController {
         ])
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @objc func logout () {
+    @objc func logout() {
         print("logout")
         Task {
             // use do-catch & try await...
@@ -127,17 +122,21 @@ class ViewController: UIViewController {
             // try? await AimstarMessaging.shared.logout()
          }
     }
-    
-    @objc func registerCustomerId () {
+
+    @objc func registerCustomerId() {
         print("register customer Id")
         if let customerId = AppDelegate.shared.customerId, let fcmToken = AppDelegate.shared.fcmToken {
-            AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
+            if let targetAppId = AppDelegate.shared.targetAppId {
+                AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken, targetAppId: targetAppId)
+            } else {
+                AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
+            }
         }
     }
-    
+
     @objc func displayFCMToken(notification: NSNotification) {
       guard let userInfo = notification.userInfo else { return }
-        
+
       if let fcmToken = userInfo["token"] as? String {
         print("Received FCM token: \(fcmToken)")
         AppDelegate.shared.fcmToken = fcmToken
@@ -149,4 +148,3 @@ class ViewController: UIViewController {
         UIPasteboard.general.string = self.fcmTokenMessage.text
     }
 }
-

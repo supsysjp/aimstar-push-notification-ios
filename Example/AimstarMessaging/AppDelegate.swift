@@ -22,13 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     /// Customer ID: アプリ開発者がユーザーを識別するIDで、アプリ開発者が独自に発行、生成、または利用します。
     var customerId: String? = "CUSTOMER_ID"
+    /// Target App ID: アプリ開発者が複数のプッシュ通知アカウントを持つ場合に、ターゲットアプリを明示的に指定したい場合に使用します。
+    var targetAppId: String? = nil
+    /// FCM Token: Firebase がプッシュ通知を送信するために必要な ID で、Firebase 側で発行・更新され、アプリ側で取得できます。
     var fcmToken: String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
         Messaging.messaging().delegate = self
-        
+
         // AimstarMessaging Module を Initialize する
         AimstarMessaging.shared.setup(apiKey: API_KEY, tenantId: TENANT_ID)
 
@@ -36,10 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let customerId, let fcmToken {
             AimstarMessaging.shared.registerToken(customerId: customerId, fcmToken: fcmToken)
         }
-        
 
         // Remote Notification を使える用にセットアップする
-        
+
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
@@ -54,8 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-
-
 // [START ios_10_message_handling]
 extension AppDelegate: UNUserNotificationCenterDelegate {
   // Receive displayed notifications for iOS 10 devices.
@@ -63,16 +63,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                               willPresent notification: UNNotification,
                               withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                 -> Void) {
-    AimstarMessaging.shared.sendLog(notification:notification)
+    AimstarMessaging.shared.sendLog(notification: notification)
 
     // Change this to your preferred presentation option
-    completionHandler([[.alert, .sound]])
+    completionHandler([[.banner, .list, .sound]])
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
                               withCompletionHandler completionHandler: @escaping () -> Void) {
-    AimstarMessaging.shared.sendLog(notification:response.notification)
+    AimstarMessaging.shared.sendLog(notification: response.notification)
 
     completionHandler()
   }

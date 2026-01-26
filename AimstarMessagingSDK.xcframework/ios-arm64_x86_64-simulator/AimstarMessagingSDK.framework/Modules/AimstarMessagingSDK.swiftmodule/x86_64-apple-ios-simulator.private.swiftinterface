@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AimstarMessagingSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AimstarMessagingSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 @_exported import AimstarMessagingSDK
 import Foundation
 import Swift
@@ -9,22 +9,19 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_hasMissingDesignatedInitializers public class AimstarMessaging {
+  public static let shared: AimstarMessagingSDK.AimstarMessaging
   @frozen public enum Error : Swift.Error {
     case precondition(Swift.String)
     case clientError(Swift.Int?)
     case serverError(Swift.Int?)
     case networkError(any Swift.Error)
   }
-  public static let shared: AimstarMessagingSDK.AimstarMessaging
   public func setup(apiKey: Swift.String, tenantId: Swift.String)
   public func setup(apiKey: Swift.String, tenantId: Swift.String, apiHost: Swift.String)
-  public func registerToken(customerId: Swift.String, fcmToken: Swift.String)
-  #if compiler(>=5.3) && $AsyncAwait
   public func logout() async throws
-  #endif
-  public func sendLog(notificationId: Swift.String, targetGroupId: Swift.String)
   public func sendLog(notification: UserNotifications.UNNotification)
-  public func postToken()
+  public func registerToken(customerId: Swift.String, fcmToken: Swift.String)
+  public func registerToken(customerId: Swift.String, fcmToken: Swift.String, targetAppId: Swift.String)
   @objc deinit
 }
 extension AimstarMessagingSDK.AimstarMessaging {

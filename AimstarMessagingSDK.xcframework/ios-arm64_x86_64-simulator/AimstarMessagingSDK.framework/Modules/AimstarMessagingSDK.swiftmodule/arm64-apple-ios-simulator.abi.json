@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "AimstarMessagingSDK",
+    "printedName": "AimstarMessagingSDK",
     "children": [
       {
         "kind": "Import",
@@ -16,6 +16,57 @@
         "name": "AimstarMessaging",
         "printedName": "AimstarMessaging",
         "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AimstarMessaging",
+                "printedName": "AimstarMessagingSDK.AimstarMessaging",
+                "usr": "s:19AimstarMessagingSDK0aB0C"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AimstarMessagingSDK0aB0C6sharedACvpZ",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C6sharedACvpZ",
+            "moduleName": "AimstarMessagingSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AimstarMessaging",
+                    "printedName": "AimstarMessagingSDK.AimstarMessaging",
+                    "usr": "s:19AimstarMessagingSDK0aB0C"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AimstarMessagingSDK0aB0C6sharedACvgZ",
+                "mangledName": "$s19AimstarMessagingSDK0aB0C6sharedACvgZ",
+                "moduleName": "AimstarMessagingSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "TypeDecl",
             "name": "Error",
@@ -207,12 +258,12 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(AimstarMessagingSDK.AimstarMessaging.Error.Type) -> (Swift.Error) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                    "printedName": "(AimstarMessagingSDK.AimstarMessaging.Error.Type) -> (any Swift.Error) -> AimstarMessagingSDK.AimstarMessaging.Error",
                     "children": [
                       {
                         "kind": "TypeFunc",
                         "name": "Function",
-                        "printedName": "(Swift.Error) -> AimstarMessagingSDK.AimstarMessaging.Error",
+                        "printedName": "(any Swift.Error) -> AimstarMessagingSDK.AimstarMessaging.Error",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -223,7 +274,7 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "Swift.Error",
+                            "printedName": "any Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ]
@@ -267,6 +318,20 @@
             "conformances": [
               {
                 "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "Error",
                 "printedName": "Error",
                 "usr": "s:s5ErrorP",
@@ -278,57 +343,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
+              },
               {
-                "kind": "TypeNominal",
-                "name": "AimstarMessaging",
-                "printedName": "AimstarMessagingSDK.AimstarMessaging",
-                "usr": "s:19AimstarMessagingSDK0aB0C"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19AimstarMessagingSDK0aB0C6sharedACvpZ",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C6sharedACvpZ",
-            "moduleName": "AimstarMessagingSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AimstarMessaging",
-                    "printedName": "AimstarMessagingSDK.AimstarMessaging",
-                    "usr": "s:19AimstarMessagingSDK0aB0C"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19AimstarMessagingSDK0aB0C6sharedACvgZ",
-                "mangledName": "$s19AimstarMessagingSDK0aB0C6sharedACvgZ",
-                "moduleName": "AimstarMessagingSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -404,6 +425,53 @@
           },
           {
             "kind": "Function",
+            "name": "logout",
+            "printedName": "logout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C6logoutyyYaKF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C6logoutyyYaKF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendLog",
+            "printedName": "sendLog(notification:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotification",
+                "printedName": "UserNotifications.UNNotification",
+                "usr": "c:objc(cs)UNNotification"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AimstarMessagingSDK0aB0C7sendLog12notificationySo14UNNotificationC_tF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C7sendLog12notificationySo14UNNotificationC_tF",
+            "moduleName": "AimstarMessagingSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "registerToken",
             "printedName": "registerToken(customerId:fcmToken:)",
             "children": [
@@ -436,29 +504,8 @@
           },
           {
             "kind": "Function",
-            "name": "logout",
-            "printedName": "logout()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C6logoutyyYaKF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C6logoutyyYaKF",
-            "moduleName": "AimstarMessagingSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "sendLog",
-            "printedName": "sendLog(notificationId:targetGroupId:)",
+            "name": "registerToken",
+            "printedName": "registerToken(customerId:fcmToken:targetAppId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -476,57 +523,17 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C7sendLog14notificationId011targetGroupG0ySS_SStF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C7sendLog14notificationId011targetGroupG0ySS_SStF",
-            "moduleName": "AimstarMessagingSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "sendLog",
-            "printedName": "sendLog(notification:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
               },
               {
                 "kind": "TypeNominal",
-                "name": "UNNotification",
-                "printedName": "UserNotifications.UNNotification",
-                "usr": "c:objc(cs)UNNotification"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C7sendLog12notificationySo14UNNotificationC_tF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C7sendLog12notificationySo14UNNotificationC_tF",
-            "moduleName": "AimstarMessagingSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "postToken",
-            "printedName": "postToken()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19AimstarMessagingSDK0aB0C9postTokenyyF",
-            "mangledName": "$s19AimstarMessagingSDK0aB0C9postTokenyyF",
+            "usr": "s:19AimstarMessagingSDK0aB0C13registerToken10customerId03fcmE009targetAppG0ySS_S2StF",
+            "mangledName": "$s19AimstarMessagingSDK0aB0C13registerToken10customerId03fcmE009targetAppG0ySS_S2StF",
             "moduleName": "AimstarMessagingSDK",
             "declAttributes": [
               "AccessControl"
@@ -541,7 +548,23 @@
         "declAttributes": [
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -601,6 +624,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -655,501 +692,88 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
       "kind": "StringLiteral",
       "offset": 42,
       "length": 41,
       "value": "\"https:\/\/event-prod.aimstar.jp\/ignite\/v1\""
     },
     {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/APIRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1193,
-      "length": 122,
-      "value": "\"ios\/\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1236,
-      "length": 1,
-      "value": "\".\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1275,
-      "length": 1,
-      "value": "\".\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1314,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1372,
-      "length": 28,
-      "value": "\"CFBundleShortVersionString\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1416,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1672,
-      "length": 12,
-      "value": "\"deviceId: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 1994,
-      "length": 10,
-      "value": "\"apikey: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2029,
-      "length": 12,
-      "value": "\"tenantId: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2068,
-      "length": 11,
-      "value": "\"apiHost: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2412,
-      "length": 8,
-      "value": "\"logout\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2501,
-      "length": 35,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2514,
-      "length": 1,
-      "value": "\": customerId is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2613,
-      "length": 32,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2626,
-      "length": 1,
-      "value": "\": apiHost is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2752,
-      "length": 35,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 2765,
-      "length": 1,
-      "value": "\": endpoint is invalid\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3028,
-      "length": 50,
-      "value": "\"Error \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3047,
-      "length": 1,
-      "value": "\": \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3077,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3463,
-      "length": 59,
-      "value": "\"Response (\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3486,
-      "length": 1,
-      "value": "\") : \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3521,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3560,
-      "length": 50,
-      "value": "\"Error \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3579,
-      "length": 1,
-      "value": "\": \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 3609,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3805,
-      "length": 3,
-      "value": "200"
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3811,
-      "length": 3,
-      "value": "299"
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3846,
-      "length": 3,
-      "value": "400"
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3852,
-      "length": 3,
-      "value": "499"
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3911,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3917,
-      "length": 3,
-      "value": "599"
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4177,
-      "length": 11,
-      "value": "\"x-api-key\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4215,
-      "length": 18,
-      "value": "\"application\/json\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4255,
-      "length": 14,
-      "value": "\"content-type\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4326,
-      "length": 11,
-      "value": "\"tenant-id\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4391,
-      "length": 6,
-      "value": "\"x-os\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4452,
-      "length": 15,
-      "value": "\"x-sdk-version\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4615,
-      "length": 27,
-      "value": "\"sendLog: apiHost is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4696,
-      "length": 35,
-      "value": "\"notificationId: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4730,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4747,
-      "length": 33,
-      "value": "\"targetGroupId: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4779,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 4844,
-      "length": 19,
-      "value": "\"open_app_via_push\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5386,
-      "length": 30,
-      "value": "\"error reading JSON: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5415,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5624,
-      "length": 27,
-      "value": "\"Error (sendLog): \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5650,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5708,
-      "length": 53,
-      "value": "\"Response (sendLog): \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5760,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 5951,
-      "length": 17,
-      "value": "\"notification_id\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 6006,
-      "length": 26,
-      "value": "\"notification_id is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 6106,
-      "length": 17,
-      "value": "\"target_group_id\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 6161,
-      "length": 26,
-      "value": "\"target_group_id is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 6402,
-      "length": 30,
-      "value": "\"postToken: fcmToken is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 6535,
-      "length": 32,
-      "value": "\"postToken: customerId is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 6664,
-      "length": 29,
-      "value": "\"postToken: apiHost is empty\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 7258,
-      "length": 30,
-      "value": "\"error reading JSON: \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 7287,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 7504,
-      "length": 30,
-      "value": "\"Error (postToken) : \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 7533,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 7591,
-      "length": 56,
-      "value": "\"Response (postToken) : \""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/AimstarMessaging.swift",
-      "kind": "StringLiteral",
-      "offset": 7646,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
-      "kind": "StringLiteral",
-      "offset": 77,
-      "length": 13,
-      "value": "\"\/fcm_tokens\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
-      "kind": "StringLiteral",
-      "offset": 119,
+      "offset": 73,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/APIRequest.swift",
       "kind": "StringLiteral",
-      "offset": 269,
-      "length": 13,
-      "value": "\"\/fcm_tokens\""
-    },
-    {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
-      "kind": "StringLiteral",
-      "offset": 311,
+      "offset": 102,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
       "kind": "StringLiteral",
-      "offset": 75,
-      "length": 7,
-      "value": "\"\/logs\""
+      "offset": 226,
+      "length": 11,
+      "value": "\"fcm_token\""
     },
     {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
       "kind": "StringLiteral",
-      "offset": 111,
-      "length": 6,
-      "value": "\"POST\""
+      "offset": 264,
+      "length": 13,
+      "value": "\"customer_id\""
     },
     {
-      "filePath": "\/Users\/banjun\/projects\/supremesystem\/messaging_sdk_ios\/AimstarMessaging\/Classes\/UserDefaults.swift",
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
       "kind": "StringLiteral",
-      "offset": 712,
-      "length": 19,
-      "value": "\"AimstarMessaging.\""
+      "offset": 302,
+      "length": 11,
+      "value": "\"device_id\""
+    },
+    {
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 341,
+      "length": 15,
+      "value": "\"target_app_id\""
+    },
+    {
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 523,
+      "length": 13,
+      "value": "\"customer_id\""
+    },
+    {
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/FCMTokens.swift",
+      "kind": "StringLiteral",
+      "offset": 561,
+      "length": 11,
+      "value": "\"device_id\""
+    },
+    {
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "kind": "StringLiteral",
+      "offset": 252,
+      "length": 17,
+      "value": "\"notification_id\""
+    },
+    {
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "kind": "StringLiteral",
+      "offset": 299,
+      "length": 17,
+      "value": "\"target_group_id\""
+    },
+    {
+      "filePath": "\/Users\/sakashita\/01-aimstar\/github\/push-notification\/messaging_sdk_ios\/AimstarMessaging\/Classes\/Endpoints\/Logs.swift",
+      "kind": "StringLiteral",
+      "offset": 343,
+      "length": 13,
+      "value": "\"customer_id\""
     }
   ]
 }
